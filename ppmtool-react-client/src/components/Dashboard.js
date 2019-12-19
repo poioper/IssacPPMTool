@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Projectitem from "./Project/Projectitem";
+import ProjectItem from "./Project/ProjectItem";
 import Header from "./Layout/Header";
 import CreateProjectButton from "./Project/CreateProjectButton";
 import { connect } from "react-redux";
@@ -24,7 +24,7 @@ class Dashboard extends Component {
               <br />
               <hr />
               {projects.map(project => (
-                <Projectitem key={project.id} project={project} />
+                <ProjectItem key={project.id} project={project} />
               ))}
             </div>
           </div>
