@@ -1,9 +1,12 @@
 package com.xfz.ppmtool.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
 public class ProjectTask {
 
@@ -19,6 +22,10 @@ public class ProjectTask {
     private Integer priority;
     private Date dueDate;
     //ManyToOne  with Backlog
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "backlog_id", updatable = false, nullable = false)
+    @JsonIgnore
+    private Backlog backlog;
 
     @Column(updatable = false)
     private String projectIdentifier;
@@ -108,6 +115,14 @@ public class ProjectTask {
 
     public void setUpdate_At(Date update_At) {
         this.update_At = update_At;
+    }
+
+    public Backlog getBacklog() {
+        return backlog;
+    }
+
+    public void setBacklog(Backlog backlog) {
+        this.backlog = backlog;
     }
 
     @PrePersist

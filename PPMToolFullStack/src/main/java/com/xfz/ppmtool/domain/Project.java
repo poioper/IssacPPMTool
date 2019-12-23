@@ -1,6 +1,7 @@
 package com.xfz.ppmtool.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -34,7 +35,7 @@ public class Project {
 
     @SuppressWarnings({"JpaAttributeTypeInspection", "JpaModelReferenceInspection"})
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "project")
-    //
+    @JsonIgnore
     private Backlog backlog;
 
     public Long getId() {
