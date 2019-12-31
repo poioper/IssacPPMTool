@@ -16,14 +16,12 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">
-                  Personal Project Management Tool
-                </h1>
+                <h1 className="display-3 mb-4">Project Management Tool</h1>
                 <p className="lead">
-                  Create your account to join active projects or start your own
+                  Create your account to start your own project management
                 </p>
                 <hr />
-                <Link className="btn btn-lg btn-primary mr-2" to="/register">
+                <Link className="btn btn-lg btn-primary mr-5" to="/register">
                   Sign Up
                 </Link>
                 <Link className="btn btn-lg btn-secondary mr-2" to="/login">

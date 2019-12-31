@@ -67,10 +67,13 @@ class Header extends Component {
       headerLinks = userIsNotAuthenticated;
     }
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
+      <nav
+        className="navbar navbar-expand-sm navbar-dark mb-4"
+        style={{ backgroundColor: "#87CEFA" }}
+      >
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Personal Project Management Tool
+            Project Management Tool
           </Link>
           <button
             className="navbar-toggler"

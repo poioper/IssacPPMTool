@@ -97,7 +97,7 @@ class UpdateProjectTask extends Component {
             <div className="col-md-8 m-auto">
               <Link
                 to={`/projectBoard/${this.state.projectIdentifier}`}
-                className="btn btn-light"
+                className="btn btn-primary"
               >
                 Back to Project Board
               </Link>
